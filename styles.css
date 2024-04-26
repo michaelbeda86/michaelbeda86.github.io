@@ -44,6 +44,9 @@ body{
     line-height: 1.5;
     transition: background-color 0.3s ease;
 }
+.dark{
+    color: var(--clr-light);
+}
 section{
     padding: 5em 2.5em;
 }
