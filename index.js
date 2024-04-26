@@ -26,3 +26,31 @@ function scrollToTop() {
       scrollToTopBtn.style.display = "none";
     }
   };
+// Toggle between Dark Mode and Light Mode
+const themeToggle = document.getElementById('theme-toggle');
+const body = document.body;
+
+themeToggle.addEventListener('click', () => {
+  if (body.classList.contains('dark')) {
+    body.classList.remove('dark');
+    body.style.backgroundColor = '#ffffff'; // Change background to white
+    localStorage.setItem('theme', 'light');
+    // themeToggle.textContent = 'Switch to Dark Mode';
+  } else {
+    body.classList.add('dark');
+    body.style.backgroundColor = '#000000'; // Change background to black
+    localStorage.setItem('theme', 'dark');
+    // themeToggle.textContent = 'Switch to Light Mode';
+  }
+});
+
+// Check for previously selected theme
+const savedTheme = localStorage.getItem('theme');
+if (savedTheme) {
+  body.classList.add(savedTheme);
+  if (savedTheme === 'dark') {
+    body.style.backgroundColor = '#000000'; // Set background to black if dark mode was previously selected
+    // themeToggle.textContent = 'Switch to Light Mode';
+  }
+}
+
