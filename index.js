@@ -33,12 +33,12 @@ const body = document.body;
 themeToggle.addEventListener('click', () => {
   if (body.classList.contains('dark')) {
     body.classList.remove('dark');
-    body.style.backgroundColor = '#ffffff'; // Change background to white
+    body.style.backgroundColor = '#ffffff'; // Set background to light when switching to light mode
     localStorage.setItem('theme', 'light');
     // themeToggle.textContent = 'Switch to Dark Mode';
   } else {
     body.classList.add('dark');
-    body.style.backgroundColor = '#000000'; // Change background to black
+    body.style.backgroundColor = '#000000'; // Set background to dark when switching to dark mode
     localStorage.setItem('theme', 'dark');
     // themeToggle.textContent = 'Switch to Light Mode';
   }
@@ -49,8 +49,7 @@ const savedTheme = localStorage.getItem('theme');
 if (savedTheme) {
   body.classList.add(savedTheme);
   if (savedTheme === 'dark') {
-    body.style.backgroundColor = '#000000'; // Set background to black if dark mode was previously selected
+    body.style.backgroundColor = '#000000'; // Set background to dark if dark mode was previously selected
     // themeToggle.textContent = 'Switch to Light Mode';
   }
 }
-
